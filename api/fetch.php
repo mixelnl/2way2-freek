@@ -52,12 +52,6 @@ try {
     $extractedText = extractContent($body);
     
     if ($isLoginPage) {
-        // Store debug info
-        $_SESSION['fetched_content'] = $body;
-        $_SESSION['fetch_url'] = $fetchUrl;
-        $_SESSION['fetch_final_url'] = $finalUrl;
-        $_SESSION['fetch_http_code'] = $httpCode;
-        
         echo json_encode([
             'success' => false, 
             'error' => 'Session appears to have expired. Please login again.',
@@ -69,12 +63,6 @@ try {
         ]);
         exit;
     }
-    
-    // Store extracted content
-    $_SESSION['fetched_content'] = $extractedText;
-    $_SESSION['fetch_url'] = $fetchUrl;
-    $_SESSION['fetch_final_url'] = $finalUrl;
-    $_SESSION['fetch_http_code'] = $httpCode;
     
     echo json_encode([
         'success' => true,
