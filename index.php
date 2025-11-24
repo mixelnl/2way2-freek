@@ -33,7 +33,7 @@ $hasLogin = isset($_SESSION['login_success']) && $_SESSION['login_success'] === 
         </div>
         <?php if ($hasLogin): ?>
             <button id="resetBtn" class="text-xs text-gray-400 hover:text-red-500 transition-colors uppercase tracking-wider font-semibold">
-                Reset Session
+                Uitloggen
             </button>
         <?php endif; ?>
     </header>
@@ -202,8 +202,7 @@ $hasLogin = isset($_SESSION['login_success']) && $_SESSION['login_success'] === 
 
                     if (result.success) {
                         state.loggedIn = true;
-                        addMessage(`✅ Login succesvol! ${result.message}.`);
-                        addMessage("Stel je vraag over je leasecontract en voorwaarden.");
+                        addMessage(`Het inloggen is gelukt! Stel je vraag over je leasecontract en voorwaarden.`);
                         // Refresh page to update PHP session state in UI if needed (e.g. reset button)
                         // For now, we just update JS state.
                     } else {
